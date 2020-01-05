@@ -15,7 +15,6 @@ System.out.println("UnionProjectApplication start~~!");
 
 	@Override 
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) { 
-		System.out.println("SpringBootServletInitializer configure start~~!");
 		return builder.sources(UnionProjectApplication.class); 
 	}
 
