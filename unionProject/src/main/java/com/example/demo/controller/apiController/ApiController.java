@@ -14,11 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/api")
 public class ApiController {
+	
+
 	//{itemName}
 	//@PathVariable String itemName
 	@RequestMapping(value = "/board", method = RequestMethod.GET)
 	public Map<String, Object> findByItemName(HttpServletRequest request, HttpServletResponse response
 			) {
+		
 System.out.println("ApiController====================================");
 		Map<String, Object> result = new HashMap<String, Object>();
 		result.put("test", "aaaa");

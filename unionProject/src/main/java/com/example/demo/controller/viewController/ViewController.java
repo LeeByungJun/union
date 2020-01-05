@@ -22,5 +22,4 @@ public class ViewController {
 		testService.getSysdate();
 		return "query";
 	}
-
 }
