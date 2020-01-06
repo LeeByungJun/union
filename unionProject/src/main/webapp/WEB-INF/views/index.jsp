@@ -11,5 +11,6 @@
 	<h2>즐겨..보시렵니까..?</h2>
 	
 	<a href="/query">ㄱㄱ</a>
+	<a href="/login">로그인</a>
 </body>
 </html>

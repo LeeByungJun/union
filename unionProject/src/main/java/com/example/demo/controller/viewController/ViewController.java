@@ -22,5 +22,10 @@ public class ViewController {
 		testService.getSysdate();
 		return "query";
 	}
+	
+	@RequestMapping("/login")
+	public String goToLogin() {
+		return "login";
+	}
 
 }
