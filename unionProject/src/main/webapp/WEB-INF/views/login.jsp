@@ -4,46 +4,52 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-<title>jsp 게시판 웹사이트</title>
+<title>로그인</title>
+<link rel="stylesheet" href="/webjars/bootstrap/4.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/login.css">
 </head>
-<body>
-	<nav class="navbar navbar-default">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
-				aria-expaned="false">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">JSP 게시판</a>
+<body class="loginDiv">
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+					<div class="logoDiv">
+						<img src="/img/logo.jpg">
+					</div>
+					<div class="card fat">
+						<div class="card-body">
+							<h4 class="card-title text-center text-dark">
+								Welcome to My System
+								<span class="badge badge-secondary">
+								v1.0
+								</span>
+							</h4>
+							<form method="POST">
+								<div class="form-group">
+									<label for="id" class="text-secondary">Account</label>
+									<input id="account" class="form-control" name="account" value="" required autofocus>
+								</div>
+								<div class="form-group">
+									<label for="id" class="text-secondary">Password</label>
+									<input id="password" type="password" class="form-control" name="password" required>
+								</div>
+								<div class="form-group no-margin">
+									<button type="submit" class="btn btn-info btn-block">
+										Login
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="footer">
+						Copyright © <a href="#" class="badge badge-info">BJLee</a> 2020
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="collapse navbar-collapse"
-			id="#bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li><a href="#">메인</a></li>
-				<li><a href="#">게시판</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown" role="button" aria-haspopup="true"
-					aria-expanded="false">접속하기<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li class="active"><a href="#">로그인</a></li>
-						<li><a href="#">회원가입</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</nav>
-	<!-- 로그인폼 -->
-	<div class="container">
-		HI~
-	</div>
-	
-	<!-- 애니메이션 담당 jquery -->
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<!-- 부트스트랩 JS -->
-	<script src="bootstrap/js/bootstrap.js"></script>
+	</section>
+
+	<script src="/webjars/jquery/3.3.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </body>
 </html>

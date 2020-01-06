@@ -12,20 +12,15 @@ public class ViewController {
 	@Autowired
 	TestService testService;
 	
-	@RequestMapping("/index")
-	public String goToIndex() {
-		return "index";
+	@RequestMapping("/")
+	public String goToLogin() {
+		return "login";
 	}
 	
 	@RequestMapping("/query")
 	public String goToQuery() throws Exception{
 		testService.getSysdate();
 		return "query";
-	}
-	
-	@RequestMapping("/login")
-	public String goToLogin() {
-		return "login";
 	}
 
 }
