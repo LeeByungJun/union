@@ -9,13 +9,11 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 public class UnionProjectApplication extends SpringBootServletInitializer{
 
 	public static void main(String[] args) {
-System.out.println("UnionProjectApplication start~~!");
 		SpringApplication.run(UnionProjectApplication.class, args);
 	}
 
 	@Override 
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) { 
-		System.out.println("SpringBootServletInitializer configure start~~!");
 		return builder.sources(UnionProjectApplication.class); 
 	}
 
