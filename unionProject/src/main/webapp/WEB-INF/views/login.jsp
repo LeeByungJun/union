@@ -24,14 +24,14 @@
 								v1.0
 								</span>
 							</h4>
-							<form method="POST">
+							<form method="POST" action="/authenticate">
 								<div class="form-group">
 									<label for="id" class="text-secondary">Account</label>
-									<input id="account" class="form-control" name="account" value="" required autofocus>
+									<input id="account" class="form-control" name="USERNAME" value="" required autofocus>
 								</div>
 								<div class="form-group">
 									<label for="id" class="text-secondary">Password</label>
-									<input id="password" type="password" class="form-control" name="password" required>
+									<input id="password" type="password" class="form-control" name="PASSWORD" required>
 								</div>
 								<div class="form-group no-margin">
 									<button type="submit" class="btn btn-info btn-block">
@@ -39,6 +39,10 @@
 									</button>
 								</div>
 							</form>
+							<div class="right-align">
+								<a href="#">ID/PW?</a>
+								<a href="#">Sign In</a>
+							</div>
 						</div>
 					</div>
 					<div class="footer">
