@@ -15,12 +15,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Autowired
 	private UserAuthenticationProvider authenticationProvider;
 	
+	/*
+	 * 스프링 시큐리티 룰을 무시하게 하는 Url 규칙
+	 */
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		//ㅎㅎ
 		web.ignoring().antMatchers("/css/**","/script/**","image/**","/fonts/**","lib/**");
 	}
-	
+	/*
+	 * 스프링 시큐리티 룰
+	 */
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
 		//1. 인증이 필요한 경로와 필요하지 않은 경로 설정
@@ -47,7 +51,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                 .logoutSuccessUrl("/login")
                 .permitAll();
     }
- 
+	/*
+	 * 스프링 시큐리티가 사용자를 인증하는 방법이 담긴 객체
+	 */
     @Override
     protected void configure(AuthenticationManagerBuilder auth) {
         auth.authenticationProvider(authenticationProvider);
