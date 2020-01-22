@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
@@ -15,13 +16,22 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	private UserAuthenticationProvider authenticationProvider;
 	
 	@Override
+	public void configure(WebSecurity web) throws Exception {
+		//ㅎㅎ
+		web.ignoring().antMatchers("/css/**","/script/**","image/**","/fonts/**","lib/**");
+	}
+	
+	@Override
     protected void configure(HttpSecurity http) throws Exception {
 		//1. 인증이 필요한 경로와 필요하지 않은 경로 설정
-        http.authorizeRequests()
-                .antMatchers("/css/**", "/js/**", "/img/**").permitAll() //정적자원에 대해서는 인증없이 접근가능하도록 완전 허용
-                .antMatchers("/auth/admin/**").hasRole("ADMIN") // 내부적으로 접두어 "ROLE_"가 붙는다. 해당 경로 접근 시, ROLE_ADMIN권한필요
-                .antMatchers("/auth/**").hasAnyRole("ADMIN", "USER") // 내부적으로 접두어 "ROLE_"가 붙는다. ROLE_ADMIN, ROLE_USER 권한 중 하나
-                .anyRequest().authenticated(); //나머지 요청은 인증된 사용자만 접근
+//        http.authorizeRequests()
+//                .antMatchers("/css/**", "/js/**", "/img/**").permitAll() //정적자원에 대해서는 인증없이 접근가능하도록 완전 허용
+//                .antMatchers("/auth/admin/**").hasRole("ADMIN") // 내부적으로 접두어 "ROLE_"가 붙는다. 해당 경로 접근 시, ROLE_ADMIN권한필요
+//                .antMatchers("/auth/**").hasAnyRole("ADMIN", "USER") // 내부적으로 접두어 "ROLE_"가 붙는다. ROLE_ADMIN, ROLE_USER 권한 중 하나
+//                .anyRequest().authenticated(); //나머지 요청은 인증된 사용자만 접근
+		http.authorizeRequests()
+				  .antMatchers("/admin.**").hasRole("ADMIN")
+				  .antMatchers("/**").permitAll();
         //2. 로그인폼에 관련된 속성
         http.formLogin()
                 .loginPage("/login") // default
