@@ -34,7 +34,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 //                .antMatchers("/auth/**").hasAnyRole("ADMIN", "USER") // 내부적으로 접두어 "ROLE_"가 붙는다. ROLE_ADMIN, ROLE_USER 권한 중 하나
 //                .anyRequest().authenticated(); //나머지 요청은 인증된 사용자만 접근
 		http.authorizeRequests()
-				  .antMatchers("/admin.**").hasRole("ADMIN")
+				  .antMatchers("/admin/**").hasRole("ADMIN")
 				  .antMatchers("/**").permitAll();
         //2. 로그인폼에 관련된 속성
         http.formLogin()
