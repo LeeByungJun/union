@@ -50,6 +50,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                 .logoutUrl("/logout") // default
                 .logoutSuccessUrl("/login")
                 .permitAll();
+//HTTP Status 403 - Expected CSRF token not found. Has your session expired? 방지
+        http.csrf().disable().httpBasic();
     }
 	/*
 	 * 스프링 시큐리티가 사용자를 인증하는 방법이 담긴 객체

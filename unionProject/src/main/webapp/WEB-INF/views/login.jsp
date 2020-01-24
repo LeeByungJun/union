@@ -46,7 +46,7 @@
 						</div>
 					</div>
 					<div class="footer">
-						Copyright © <a href="#" class="badge badge-info">BJLee</a> 2020
+						Copyright © <a href="#" class="badge badge-info">BJLee</a> 2020 
 					</div>
 				</div>
 			</div>
