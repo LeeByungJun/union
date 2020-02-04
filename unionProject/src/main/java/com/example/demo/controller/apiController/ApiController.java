@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class ApiController {
 	
 	@Resource(name="redisTemplate") private ValueOperations<String, String> valueOperations;
-	@Autowired	private RedisTemplate redisTemplate;
 
 	// {itemName}
 	// @PathVariable String itemName
@@ -28,7 +27,7 @@ public class ApiController {
 
 		System.out.println("ApiController====================================");
 		Map<String, Object> result = new HashMap<String, Object>();
-		valueOperations.set("12", "33");
+		valueOperations.set("12", System.currentTimeMillis()+"");
 		result.put("test", "aaaa"); 
 		System.out.println(valueOperations.get("12"));
 		return result;	
